@@ -11,3 +11,8 @@ pytest==6.2.4
 toml==0.10.2
 typing-extensions==3.10.0.0
 zipp==3.4.1
+
+PyYAML~=5.4.1
+numpy~=1.20.3
+selenium~=3.141.0
+Faker~=8.8.2
