@@ -8,7 +8,7 @@ def test_get_cookie():
     driver = webdriver.Chrome(options=opt)
     cookies = driver.get_cookies()
     driver.find_element_by_id("menu_contacts").click()
-    with open("../data/cookies.yaml", "w") as f:
+    with open("../data/cookies.yml", "w") as f:
         yaml.safe_dump(cookies, f)
     print(cookies)
 

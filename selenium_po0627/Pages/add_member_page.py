@@ -6,8 +6,8 @@ from selenium_po0627.Pages.contact_page import ContactPage
 
 class AddMemberPage(BasePage):
 
-    def __init__(self):
-        super().__init__()
+    def __init__(self, driver):
+        super().__init__(driver)
         self.username_input = (By.ID, "username")
         self.english_name_input = (By.ID, "memberAdd_english_name")
         self.acctid_input = (By.ID, "memberAdd_acctid")
@@ -18,4 +18,4 @@ class AddMemberPage(BasePage):
         self.driver.find_element(*self.english_name_input).send_keys(value.get("english_name"))
         self.driver.find_element(*self.acctid_input).send_keys(value.get("acctid"))
         self.driver.find_element(*self.phone_input).send_keys(value.get("phone"))
-        return ContactPage()
+        return ContactPage(self.driver)

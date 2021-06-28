@@ -15,7 +15,7 @@ def test_wework(get_driver):
     # 获取cookies信息,给当前打开的浏览器加上cookie信息
     with allure.step("获取cookie信息"):
         r = ReadData()
-        for cookie in r.get_yaml_data("cookies.yaml"):
+        for cookie in r.get_yaml_data("cookies.yml"):
             driver.add_cookie(cookie)
 
     # 进入企业微信首页
