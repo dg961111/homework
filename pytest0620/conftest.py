@@ -1,7 +1,7 @@
 # 获取计算器实例
 import logging
 import pytest
-from other.calculate import Calculate
+from testedcode.calculate import Calculate
 from util.read_data import ReadData
 
 r = ReadData()
