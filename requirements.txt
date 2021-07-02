@@ -16,3 +16,4 @@ PyYAML~=5.4.1
 numpy~=1.20.3
 selenium~=3.141.0
 Faker~=8.8.2
+Appium-Python-Client~=1.2.0

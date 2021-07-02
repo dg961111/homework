@@ -10,8 +10,8 @@ success = data.get("success")
 fail = data.get("fail")
 
 
-@allure.feature("企业微信添加部门测试")
-@allure.title("企业微信添加部门测试")
+@allure.feature("企业微信网页端测试")
+@allure.title("企业微信网页端测试")
 class TestAddDepartment:
 
     # 结束后清理掉测试生成的数据
