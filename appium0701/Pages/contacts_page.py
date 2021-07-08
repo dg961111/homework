@@ -11,9 +11,6 @@ class ContactsPage(BasePage):
     _GENDER_BUTTON = (MobileBy.ID, "com.tencent.wework:id/av2")
     _SAVE_BUTTON = (MobileBy.ID, "com.tencent.wework:id/gur")
 
-    def __init__(self, driver):
-        super().__init__(driver)
-
     def add_member(self, name, phone, gender):
         with allure.step("滚动查找添加成员按钮"):
             self.scroll_locator(self._ADD_MEMBER_BUTTON).click()
