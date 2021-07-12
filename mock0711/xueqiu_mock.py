@@ -1,7 +1,7 @@
 import json
 import re
-
 import mitmproxy.http
+from mitmproxy import http
 
 url = "https://stock.xueqiu.com/v5/stock/batch/quote.json"
 values = [0, -999999, 999999, 0.01, -0.01]
@@ -9,11 +9,11 @@ values = [0, -999999, 999999, 0.01, -0.01]
 
 class MockLocal:
 
-    def response(self, flow: mitmproxy.http.HTTPFlow):
+    def request(self, flow: mitmproxy.http.HTTPFlow):
         if url in flow.request.pretty_url and 'x=' in flow.request.pretty_url:
             with open('quote.json', encoding="utf-8") as f:
                 # mapLocal返回
-                flow.response = flow.response.make(
+                flow.response = http.HTTPResponse.make(
                     200,
                     f.read()
                 )
@@ -50,8 +50,8 @@ class MockDouble:
 
 addons = [
     MockLocal(),
-    MockRewrite(),
-    MockDouble()
+    # MockRewrite(),
+    # MockDouble()
 ]
 
 if __name__ == '__main__':
