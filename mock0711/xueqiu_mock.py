@@ -50,8 +50,8 @@ class MockDouble:
 
 addons = [
     MockLocal(),
+    MockDouble(),
     MockRewrite(),
-    MockDouble()
 ]
 
 if __name__ == '__main__':
