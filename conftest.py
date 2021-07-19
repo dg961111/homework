@@ -1,7 +1,5 @@
 import time
-from datetime import datetime
 import pytest
-from selenium_po0627.Pages.base_page import BasePage
 from settings import LOG_DIR
 
 
