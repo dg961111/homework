@@ -1,5 +1,4 @@
 from typing import List
-import requests
 from interface0718.api.base_api import BaseApi
 
 
@@ -14,7 +13,7 @@ class ContactApi(BaseApi):
             "access_token": self.token,
             **kwargs
         }
-        re = requests.post(self.host + path, json=data)
+        re = self.http_post(path, json=data)
         return re
 
     def update(self, userid, **kwargs):
@@ -23,7 +22,7 @@ class ContactApi(BaseApi):
             "userid": userid,
             **kwargs
         }
-        re = requests.post(self.host + path, json=data)
+        re = self.http_post(path, json=data)
         return re
 
     def delete(self, userid):
@@ -32,7 +31,7 @@ class ContactApi(BaseApi):
             "userid": userid,
             "access_token": self.token
         }
-        re = requests.get(self.host + path, params=data)
+        re = self.http_get(path, params=data)
         return re
 
     def get(self, userid):
@@ -41,5 +40,8 @@ class ContactApi(BaseApi):
             "userid": userid,
             "access_token": self.token
         }
-        re = requests.get(self.host + path, params=data)
+        re = self.http_get(path, params=data)
         return re
+
+    # def get_all_member(self):
+    #     pass
