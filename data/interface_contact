@@ -5,14 +5,14 @@ setup_add: [{userid: "test_01", name: 测试01, department: [1], email: test01@t
 add:
   args: [value, expect]
   data:
-    - [{userid: zhangsan, name: 张三, department: [1], email: zhangsan@test.com}, {code: 0, msg: created}]
-    - [{userid: 1234567890123456789012345678901234567890123456789012345678901234, name: 一二三四五六七八九十, department: 1, email: abcdefghijabcdfghijabcdefghijabcdefghijabcdeghjabcdefg@test.com}, {code: 0, msg: created}]
-    - [{userid: z, name: z, department: [1], email: a@t.com}, {code: 0, msg: created}]
+    - [{userid: "zhangsan", name: 张三, department: [1], email: zhangsan@test.com}, {code: 0, msg: created}]
+    - [{userid: "1234567890123456789012345678901234567890123456789012345678901234", name: 一二三四五六七八九十, department: 1, email: abcdefghijabcdfghijabcdefghijabcdefghijabcdeghjabcdefg@test.com}, {code: 0, msg: created}]
+    - [{userid: "z", name: z, department: [1], email: a@t.com}, {code: 0, msg: created}]
     - [{userid: "_zhang", name: z, department: [1], email: abc@te}, {code: 40003, msg: invalid userid}]
     - [{userid: "z#!:>hang", name: z, department: [1], email: abc@te}, {code: 40003, msg: invalid userid}]
     - [{userid: "zhang", name: z, department: [1]}, {code: 60129, msg: missing mobile or email}]
-    - [{userid: zhangsan, name: 张三, department: [1], email: zhangsan@test.com}, {code: 60102, msg: userid existed}]
-    - [{userid: dwda, name: 里斯, department: 1, email: zhang@test.com, gender: "aaa"}, {code: 60102, msg: userid existed}]
+    - [{userid: "zhangsan", name: 张三, department: [1], email: zhangsan@test.com}, {code: 60102, msg: userid existed}]
+    - [{userid: "dwda", name: 里斯, department: [1], email: zhang@test.com, gender: "aaa"}, {code: 60102, msg: userid existed}]
   ids:
     - 正常添加
     - 上边界
